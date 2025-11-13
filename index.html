@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENEM Mentor - Panfleto 10x15cm</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #1a1a2e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .flyer {
+            width: 10cm;
+            height: 15cm;
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .flyer::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -30%;
+            width: 150%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(239, 68, 68, 0.15) 0%, transparent 60%);
+            animation: pulse 6s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.08); opacity: 0.3; }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            padding: 15px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+            flex-shrink: 0;
+        }
+
+        .logo {
+            font-size: 28px;
+            margin-bottom: 3px;
+        }
+
+        .title {
+            font-size: 26px;
+            font-weight: 900;
+            color: white;
+            letter-spacing: 3px;
+            line-height: 1;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            font-size: 9px;
+            color: rgba(255, 255, 255, 0.95);
+            margin-top: 4px;
+            font-weight: 300;
+        }
+
+        .content {
+            padding: 12px;
+            position: relative;
+            z-index: 1;
+            flex: 1;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .section-title {
+            font-size: 11px;
+            color: #ef4444;
+            font-weight: 700;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .steps {
+            background: rgba(30, 41, 59, 0.6);
+            border-radius: 10px;
+            padding: 10px;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 6px;
+            margin-bottom: 6px;
+            font-size: 9px;
+            color: #cbd5e1;
+            line-height: 1.3;
+        }
+
+        .step:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-number {
+            background: #ef4444;
+            color: white;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 8px;
+            flex-shrink: 0;
+        }
+
+        .features-compact {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5px;
+        }
+
+        .feature-mini {
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 6px;
+            padding: 6px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .feature-mini-icon {
+            font-size: 16px;
+            margin-bottom: 2px;
+        }
+
+        .feature-mini-text {
+            font-size: 7.5px;
+            color: white;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .footer {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            padding: 8px 12px;
+            text-align: center;
+            z-index: 1;
+            flex-shrink: 0;
+        }
+
+        .footer-text {
+            font-size: 10px;
+            color: white;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .footer-badges {
+            display: flex;
+            justify-content: center;
+            gap: 4px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 3px 8px;
+            border-radius: 10px;
+            font-size: 7px;
+            color: white;
+            font-weight: 600;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .flyer {
+                width: 10cm;
+                height: 15cm;
+                box-shadow: none;
+            }
+            @page {
+                size: 10cm 15cm;
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="flyer">
+        <div class="header">
+            <div class="logo">🧠</div>
+            <div class="title">ENEM MENTOR</div>
+            <div class="subtitle">Preparação com IA</div>
+        </div>
+
+        <div class="content">
+            <div>
+                <div class="section-title">🚀 COMO USAR</div>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div>Baixe e extraia o ZIP</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div>Execute ENEM_Mentor.exe</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div>Cadastre-se no sistema</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div>Configure API Groq grátis</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <div>Comece a estudar!</div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="section-title">✨ RECURSOS</div>
+                <div class="features-compact">
+                    <div class="feature-mini">
+                        <div class="feature-mini-icon">📝</div>
+                        <div class="feature-mini-text">Simulados</div>
+                    </div>
+                    <div class="feature-mini">
+                        <div class="feature-mini-icon">🤖</div>
+                        <div class="feature-mini-text">Questões IA</div>
+                    </div>
+                    <div class="feature-mini">
+                        <div class="feature-mini-icon">📄</div>
+                        <div class="feature-mini-text">Redações</div>
+                    </div>
+                    <div class="feature-mini">
+                        <div class="feature-mini-icon">💬</div>
+                        <div class="feature-mini-text">Chatbot</div>
+                    </div>
+                    <div class="feature-mini">
+                        <div class="feature-mini-icon">📊</div>
+                        <div class="feature-mini-text">Desempenho</div>
+                    </div>
+                    <div class="feature-mini">
+                        <div class="feature-mini-icon">📋</div>
+                        <div class="feature-mini-text">Boletim</div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="section-title">📚 10 MATÉRIAS</div>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">📐</div>
+                        <div>Matemática • Português • Biologia</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">🌍</div>
+                        <div>Geografia • Física • Química</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">🇬🇧</div>
+                        <div>Inglês • Espanhol • Filosofia • Sociologia</div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="section-title">👨‍🏫 PROFESSORES</div>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">✓</div>
+                        <div>Gerencie alunos e edite notas</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">✓</div>
+                        <div>Controle de presença e faltas</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-text">100% GRATUITO • WINDOWS</div>
+            <div class="footer-badges">
+                <div class="badge">✅ Instalação Rápida</div>
+                <div class="badge">✅ Fácil Uso</div>
+                <div class="badge">✅ IA Integrada</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
